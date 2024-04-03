@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { DataManager, Query, UrlAdaptor } from '@syncfusion/ej2-data';
+import { DataManager, UrlAdaptor } from '@syncfusion/ej2-data';
 
 @Component({
   selector: 'app-root',
   template: `
-  <ejs-gantt [dataSource]='data' [query]="query" [treeColumnIndex]='1' height='400' [taskFields]="taskSettings" [splitterSettings] = "splitterSettings"  loadChildOnDemand='true' >
+  <ejs-gantt [dataSource]='data' [treeColumnIndex]='1' height='400' [taskFields]="taskSettings" [splitterSettings] = "splitterSettings"  loadChildOnDemand='true' >
                 <e-columns>
                   <e-column field='TaskID' headerText='Task ID' width='90'></e-column>
                   <e-column field='TaskName' headerText='Task Name' width='80'></e-column>
@@ -37,6 +37,4 @@ export class AppComponent {
       position: '75%'
     };
   }
-  public query?: Query = new Query().expand('Tasks');
-
 }
